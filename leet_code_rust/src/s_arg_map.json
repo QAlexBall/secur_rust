@@ -1,0 +1,11 @@
+[
+    {
+        "s_name": "three_sum",
+        "arg_num": 1,
+        "arg_type": "Vec<i32>",
+        "arg_example": ["[-4, -1, 0, 2, -2, 3]"]
+    },
+    {
+        
+    }
+]
