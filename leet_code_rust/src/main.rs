@@ -1,10 +1,19 @@
 extern crate clap;
 use clap::{App, Arg};
 mod solutions;
-use solutions::solution::*;
+use solutions::three_sum::*;
+extern crate libloading as lib;
+
+fn call_dynamic() -> lib::Result<u32> {
+    let lib = lib::Library::new("/path/to/lib")?;
+    unsafe {
+        let func: lib::Symbol<unsafe extern fn() -> u32> = lib.get(b"my_func")?;
+        Ok(func())
+    }
+}
 
 fn main() {
-    let matches = App::new("Leet Code For Rust.")
+    let matches = App::new("LeetCode For Rust.")
         .version("1.0")
         .author("ChrisZhu <zhuderenq@outlook.com>")
         .about("Command line to introduce leetcode code, and show result!")
@@ -37,12 +46,16 @@ fn main() {
     let s_name = matches.value_of("s_name").unwrap_or("default");
     let arg_num = matches.value_of("arg_num").unwrap_or("1");
     let s_arg = matches.value_of("s_arg").unwrap_or("empty");
-    let solution = Solution::new(
-        String::from(s_name),
-        String::from(arg_num),
-        String::from(s_arg),
-    );
-    let arg = Arguments {};
-    println!("result is : {:?}", solution.exec(arg));
-    display_solution(solution);
+    println!("{}", s_name);
+    if s_name == "three_sum" {
+        let solution = ThreeSum::new(
+            String::from(s_name),
+            String::from(arg_num),
+            String::from(s_arg),
+        );
+        display_result(&solution);
+        println!("{:?}", solution);
+    }
+    let add_string = |x: String| -> String { String::from(x + "a") };
+    println!("{:?}", add_string(String::from("b")));
 }

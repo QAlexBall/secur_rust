@@ -37,3 +37,43 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     res
 }
+
+use super::solution::SExcutable;
+
+#[derive(Debug, Clone)]
+pub struct ThreeSum {
+    s_name: String,
+    arg_num: String,
+    s_args: String,
+    args: Vec<i32>,
+}
+
+impl ThreeSum {
+    pub fn new(s_name: String, arg_num: String, s_args: String) -> Self {
+        let args = vec![-4, -5, 3, 1, 0, 2, -1];
+        Self {
+            s_name,
+            arg_num,
+            s_args,
+            args,
+        }
+    }
+
+    pub fn detail(&self) {
+        println!(
+            "@s_name {}, @arg_num {}, @s_args {}",
+            self.s_name, self.arg_num, self.s_args
+        );
+    }
+}
+
+impl SExcutable<Vec<Vec<i32>>> for ThreeSum {
+    fn exec(&self) -> Vec<Vec<i32>> {
+        self.detail();
+        three_sum(self.args.clone())
+    }
+}
+
+pub fn display_result(item: &impl SExcutable<Vec<Vec<i32>>>) {
+    println!("{:?}", item.exec());
+}
