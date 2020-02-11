@@ -4,6 +4,8 @@ use std::io::{stdout, BufWriter};
 mod my_lib;
 use my_lib::*;
 
+mod tests;
+
 fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     let mut largest = list[0];
 

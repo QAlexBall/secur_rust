@@ -1,16 +1,9 @@
 extern crate clap;
 use clap::{App, Arg};
-mod solutions;
-use solutions::three_sum::*;
 extern crate libloading as lib;
 
-fn call_dynamic() -> lib::Result<u32> {
-    let lib = lib::Library::new("/path/to/lib")?;
-    unsafe {
-        let func: lib::Symbol<unsafe extern fn() -> u32> = lib.get(b"my_func")?;
-        Ok(func())
-    }
-}
+pub mod solutions;
+use solutions::three_sum::*;
 
 fn main() {
     let matches = App::new("LeetCode For Rust.")

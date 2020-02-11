@@ -2,6 +2,7 @@
   <dictionary name="derenzhu">
     <words>
       <w>argnum</w>
+      <w>jsonfile</w>
       <w>leet</w>
       <w>leetcode</w>
       <w>libloading</w>
