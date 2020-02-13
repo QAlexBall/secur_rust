@@ -6,9 +6,11 @@ pub mod solutions;
 use solutions::three_sum::*;
 mod learning_code;
 use learning_code::learn_match::run_learn_match;
+use learning_code::learn_collections::run_learn_collections;
 
 fn main() {
     run_learn_match();
+    run_learn_collections();
     let matches = App::new("LeetCode For Rust.")
         .version("1.0")
         .author("ChrisZhu <zhuderenq@outlook.com>")

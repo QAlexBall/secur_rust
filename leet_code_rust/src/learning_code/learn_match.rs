@@ -42,7 +42,7 @@ fn test_if_let(num: Option<i32>) {
 }
 
 pub fn run_learn_match() {
-    println!("==========> start running learn match code!");
+    println!("===> start running learn match code!");
     let coin = Coin::Quarter(UsState::Alaska);
     println!("{}", value_in_cents(coin));
 
@@ -55,5 +55,5 @@ pub fn run_learn_match() {
     test_if_let(Some(5));
     test_if_let(Some(3));
     test_if_let(Some(6));
-    println!("==========>  done running learn match code!");
+    println!("===>  done running learn match code!\n");
 }
