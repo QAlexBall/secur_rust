@@ -4,8 +4,11 @@ extern crate libloading as lib;
 
 pub mod solutions;
 use solutions::three_sum::*;
+mod learning_code;
+use learning_code::learn_match::run_learn_match;
 
 fn main() {
+    run_learn_match();
     let matches = App::new("LeetCode For Rust.")
         .version("1.0")
         .author("ChrisZhu <zhuderenq@outlook.com>")
