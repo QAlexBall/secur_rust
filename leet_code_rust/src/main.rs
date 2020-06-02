@@ -5,12 +5,16 @@ extern crate libloading as lib;
 pub mod solutions;
 use solutions::three_sum::*;
 mod learning_code;
-use learning_code::learn_match::run_learn_match;
-use learning_code::learn_collections::run_learn_collections;
+
+fn learning_code() {
+//    learning_code::learn_match::run_learn_match();
+//    learning_code::learn_collections::run_learn_collections();
+//    learning_code::error_handling::run_learn_error_handling();
+    learning_code::generic_trait::run_learn_generic_trait();
+}
 
 fn main() {
-    run_learn_match();
-    run_learn_collections();
+    learning_code();
     let matches = App::new("LeetCode For Rust.")
         .version("1.0")
         .author("ChrisZhu <zhuderenq@outlook.com>")

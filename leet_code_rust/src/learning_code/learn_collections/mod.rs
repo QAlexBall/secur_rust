@@ -1,6 +1,6 @@
-pub mod learn_vector;
-pub mod learn_string;
-pub mod learn_hashmap;
+mod learn_vector;
+mod learn_string;
+mod learn_hashmap;
 
 pub fn run_learn_collections() {
     println!("===> Start running learning collections!");

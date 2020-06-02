@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "leet_code_rust"
+		},
+		{
+			"path": "rust_web"
+		},
+		{
+			"path": "yew/yew-app"
+		}
+	],
+	"settings": {}
+}
